@@ -27,8 +27,13 @@
       </div>
 
       <div id="root">
-        <input type="text" placeholder="Inserire task" />
-        <button>Aggiungi</button>
+        <input
+          @keyup.enter=""
+          type="text"
+          placeholder="Inserire task"
+          v-model="newTodo"
+        />
+        <button @click="addTodo">Aggiungi</button>
         <div
           class="todo-container container d-flex justify-content-center mt-3"
         >

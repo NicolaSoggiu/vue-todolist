@@ -26,7 +26,12 @@ const app = Vue.createApp({
       ],
     };
   },
-  methods: {},
+  methods: {
+    addTodo() {
+      this.todos.push({ text: this.newTodo, done: "<i class='bi bi-x'></i>" });
+      this.newTodo = "";
+    },
+  },
 });
 
 app.mount("#root");
