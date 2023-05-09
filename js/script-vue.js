@@ -33,7 +33,7 @@ const app = Vue.createApp({
       if (cleanTodo.length > 5) {
         this.todos.unshift({
           text: cleanTodo,
-          done: "<i class='bi bi-x'></i>",
+          done: true,
         });
         this.newTodo = "";
         this.error = false;

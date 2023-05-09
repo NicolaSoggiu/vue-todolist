@@ -48,9 +48,9 @@
               v-for="(todo, i) in todos"
               :key="index"
               :class="{todoLine: this.todos[i].done == false}"
-              @click="todoLineThrough(i)"
             >
-              {{ todo.text }}
+              <span @click="todoLineThrough(i)">{{ todo.text }}</span>
+
               <span @click="deleteTodo(i)"><i class="bi bi-x"></i> </span>
             </li>
           </ul>
