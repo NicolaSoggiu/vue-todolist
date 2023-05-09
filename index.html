@@ -20,12 +20,26 @@
     <link rel="stylesheet" href="/assets/style.css" />
   </head>
   <body>
-    <div class="container">
-      <div class="logo">
-        <img src="" alt="" />
+    <div class="container vh-100 text-center pt-5">
+      <div class="logo pb-5">
+        <img src="img/Logo.png" alt="" />
+        <h1>To Do list</h1>
       </div>
 
-      <template id="root"></template>
+      <div id="root">
+        <input type="text" placeholder="Inserire task" />
+        <button>Aggiungi</button>
+        <div
+          class="todo-container container d-flex justify-content-center mt-3"
+        >
+          <ul class="d-flex flex-column">
+            <li v-for="(todo, index) in todos" :key="index">
+              {{ todo.text }}
+              <span v-html="todo.done"></span>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </body>
 </html>
