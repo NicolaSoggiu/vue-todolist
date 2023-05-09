@@ -1,6 +1,7 @@
 const app = Vue.createApp({
   data() {
     return {
+      error: false,
       newTodo: "",
       todos: [
         {
@@ -28,8 +29,20 @@ const app = Vue.createApp({
   },
   methods: {
     addTodo() {
-      this.todos.push({ text: this.newTodo, done: "<i class='bi bi-x'></i>" });
-      this.newTodo = "";
+      let cleanTodo = this.newTodo.trim();
+      if (cleanTodo.length > 5) {
+        this.todos.unshift({
+          text: cleanTodo,
+          done: "<i class='bi bi-x'></i>",
+        });
+        this.newTodo = "";
+        this.error = false;
+      } else {
+        this.error = true;
+      }
+    },
+    deleteTodo(index) {
+      this.todos.splice(index, 1);
     },
   },
 });

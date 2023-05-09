@@ -14,3 +14,11 @@ li {
     background-color: lightgray;
     border-radius: 10px;
 }
+
+span {
+    cursor: pointer;
+}
+
+.barr {
+    text-decoration: line-through;
+}

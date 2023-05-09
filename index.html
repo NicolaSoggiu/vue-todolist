@@ -27,22 +27,28 @@
       </div>
 
       <div id="root">
-        <input
-          @keyup.enter=""
-          type="text"
-          placeholder="Inserire task"
-          v-model="newTodo"
-        />
-        <button @click="addTodo">Aggiungi</button>
+        <div class="type-container pb-3">
+          <input
+            @keyup.enter="addTodo"
+            type="text"
+            placeholder="Inserire task"
+            v-model="newTodo"
+          />
+          <button @click="addTodo">Aggiungi</button>
+        </div>
+        <span v-show="error" style="color: red">
+          Devi inserire almeno una task di 5 caratteri</span
+        >
         <div
           class="todo-container container d-flex justify-content-center mt-3"
         >
-          <ul class="d-flex flex-column">
-            <li v-for="(todo, index) in todos" :key="index">
+          <ul v-if="todos.length !=0" class="d-flex flex-column">
+            <li class="pt-2 pb-2" v-for="(todo, i) in todos" :key="index">
               {{ todo.text }}
-              <span v-html="todo.done"></span>
+              <span v-html="todo.done" @click="deleteTodo(i)"></span>
             </li>
           </ul>
+          <h2 v-else>Non ci sono task da fare</h2>
         </div>
       </div>
     </div>
