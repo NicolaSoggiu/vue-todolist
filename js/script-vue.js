@@ -6,23 +6,23 @@ const app = Vue.createApp({
       todos: [
         {
           text: "fare la spesa",
-          done: "<i class='bi bi-x'></i>",
+          done: true,
         },
         {
           text: "andare dal meccanico",
-          done: "<i class='bi bi-x'></i>",
+          done: true,
         },
         {
           text: "ritirare il pacco",
-          done: "<i class='bi bi-x'></i>",
+          done: true,
         },
         {
           text: "passare dal medico",
-          done: "<i class='bi bi-x'></i>",
+          done: true,
         },
         {
           text: "andare a correre",
-          done: "<i class='bi bi-x'></i>",
+          done: true,
         },
       ],
     };
@@ -43,6 +43,9 @@ const app = Vue.createApp({
     },
     deleteTodo(index) {
       this.todos.splice(index, 1);
+    },
+    todoLineThrough(i) {
+      this.todos[i].done = !this.todos[i].done;
     },
   },
 });

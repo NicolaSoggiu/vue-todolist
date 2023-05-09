@@ -7,18 +7,20 @@
 }
 
 li {
+    cursor: pointer;
     list-style: none;
-}
-
-.todo-container {
-    background-color: lightgray;
-    border-radius: 10px;
 }
 
 span {
     cursor: pointer;
 }
 
-.barr {
+
+.todo-container {
+    background-color: lightgray;
+    border-radius: 10px;
+}
+
+.todoLine {
     text-decoration: line-through;
 }
