@@ -36,11 +36,11 @@
           />
           <button @click="addTodo">Aggiungi</button>
         </div>
-        <span v-show="error" style="color: red">
+        <span v-show="error" class="text-bg-danger">
           Devi inserire almeno una task di 5 caratteri</span
         >
         <div
-          class="todo-container container d-flex justify-content-center mt-3"
+          class="todo-container container d-flex justify-content-center mt-3 rounded"
         >
           <ul v-if="todos.length !=0" class="d-flex flex-column">
             <li

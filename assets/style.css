@@ -1,23 +1,13 @@
 /* GENERAL */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-li {
-    cursor: pointer;
-    list-style: none;
-}
-
-span {
+li, span {
     cursor: pointer;
 }
+
+/* CONTAINER */
 
 .todo-container {
     background-color: lightgray;
-    border-radius: 10px;
 }
 
 .todoLine {
